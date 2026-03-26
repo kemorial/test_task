@@ -16,6 +16,15 @@
 
 ---
 
+# В итоге
+
+- Написал в каждой task свои скрипты, проверил их в docker следующими шагами:
+  ### docker pull mysql:latest
+  ### docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=pass -p 3306:3306 -d mysql:latest
+  ### create database app;
+  ### use app
+  ### create table product (id INT PRIMARY KEY AUTO_INCREMENT, name VARCHAR(255), art VARCHAR(10),price DECIMAL(10,2), quantity INTEGER);
+
 Привет! 👋  
 Это тестовое задание для кандидатов на позицию **PHP-разработчика**, который будет работать с Bitrix24 (коробка), Laravel и легаси-кодом.
 
