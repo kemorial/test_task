@@ -21,8 +21,9 @@
 - Написал в каждой task свои скрипты, проверил их в docker следующими шагами:
   ### docker pull mysql:latest
   ### docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=pass -p 3306:3306 -d mysql:latest
+  ### docker exec -it some-mysql mysql -p
   ### create database app;
-  ### use app
+  ### use app;
   ### create table product (id INT PRIMARY KEY AUTO_INCREMENT, name VARCHAR(255), art VARCHAR(10),price DECIMAL(10,2), quantity INTEGER);
 
 Привет! 👋  
