@@ -5,7 +5,9 @@ let deals = [];
 
 function render() {
     const status = statusFilter.value;
-    const filtered = deals.filter((deal) => deal.status === status);
+    const filtered = status === 'ALL'
+        ? deals
+        : deals.filter((deal) => deal.status === status);
 
     bodyEl.innerHTML = '';
     filtered.forEach((deal) => {
