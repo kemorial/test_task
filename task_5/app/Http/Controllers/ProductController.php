@@ -11,7 +11,8 @@ class ProductController extends Controller
 {
     public function index(): JsonResponse
     {
-        return response()->json(ProductResource::collection(Product::all()));
+        $products =  Product::paginate(50);
+        return ProductResource::collection($products);
     }
 
     public function store(ProductRequest $request): JsonResponse
@@ -20,7 +21,7 @@ class ProductController extends Controller
 
         $product = Product::create($data);
 
-        return response()->json(new ProductResource($product), 201);
+        return response(ProductResource::make($product), 201);
     }
 
     public function update(ProductRequest $request, int $id): JsonResponse
@@ -30,7 +31,7 @@ class ProductController extends Controller
         $product = Product::findOrFail($id);
         $product->update($data);
 
-        return response()->json(new ProductResource($product));
+        return ProductResource::make($product);
     }
 
     public function destroy(int $id): JsonResponse

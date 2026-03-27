@@ -18,8 +18,6 @@ class ProductResource extends JsonResource
             'art' => $this->art,
             'price' => $this->price,
             'quantity' => $this->quantity,
-            'created_at' => $this->created_at,
-            'updated_at' => $this->updated_at,
         ];
     }
 }
